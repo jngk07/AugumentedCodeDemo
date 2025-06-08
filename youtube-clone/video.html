@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone - Video Player</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube Clone</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search" class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <button class="icon-btn">
+                <i class="fas fa-video"></i>
+            </button>
+            <button class="icon-btn">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="video-page-content">
+        <div class="video-player-section">
+            <div class="video-player-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="video-info">
+                <h1 id="videoTitle" class="video-title">Loading...</h1>
+                <div class="video-meta">
+                    <div class="video-stats">
+                        <span id="videoViews">0 views</span>
+                        <span id="videoDate">• Loading...</span>
+                    </div>
+                    <div class="video-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span id="likeCount">0</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span>Dislike</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-share"></i>
+                            <span>Share</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-download"></i>
+                            <span>Download</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="channel-info">
+                    <div class="channel-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="channel-details">
+                        <h3 id="channelName" class="channel-name">Loading...</h3>
+                        <p id="subscriberCount" class="subscriber-count">0 subscribers</p>
+                    </div>
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+                
+                <div class="video-description">
+                    <p id="videoDescription">Loading description...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="suggested-videos">
+            <h3>Up next</h3>
+            <div id="suggestedVideosList" class="suggested-videos-list">
+                <!-- Suggested videos will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Load video details when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            loadVideoDetails();
+        });
+    </script>
+</body>
+</html>
